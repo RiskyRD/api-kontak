@@ -4,12 +4,12 @@ Proyek ini adalah aplikasi manajemen kontak dengan autentikasi token. Backend be
 
 ## Teknologi
 
-| Bagian | Teknologi |
-| --- | --- |
-| Backend | PHP 8.3+, Laravel 13, Laravel Sanctum |
-| Database | SQLite |
-| Frontend | React 19, Vite |
-| Autentikasi | Bearer token (Sanctum) |
+| Bagian      | Teknologi                             |
+| ----------- | ------------------------------------- |
+| Backend     | PHP 8.3+, Laravel 13, Laravel Sanctum |
+| Database    | SQLite                                |
+| Frontend    | React 19, Vite                        |
+| Autentikasi | Bearer token (Sanctum)                |
 
 ## Prasyarat
 
@@ -197,15 +197,15 @@ Accept: application/json
 Content-Type: application/json
 ```
 
-| Method | Endpoint | Autentikasi | Keterangan |
-| --- | --- | --- | --- |
-| POST | `/api/register` | Tidak | Membuat akun dan token |
-| POST | `/api/login` | Tidak | Login dan memperoleh token |
-| POST | `/api/logout` | Ya | Logout (tambahkan method `logout` seperti di atas) |
-| GET | `/api/contacts` | Ya | Daftar kontak beserta nomor telepon |
-| POST | `/api/contacts` | Ya | Menambah kontak |
-| GET | `/api/contacts/{id}` | Ya | Detail kontak |
-| DELETE | `/api/contacts/{id}` | Ya | Menghapus kontak |
+| Method | Endpoint             | Autentikasi | Keterangan                                         |
+| ------ | -------------------- | ----------- | -------------------------------------------------- |
+| POST   | `/api/register`      | Tidak       | Membuat akun dan token                             |
+| POST   | `/api/login`         | Tidak       | Login dan memperoleh token                         |
+| POST   | `/api/logout`        | Ya          | Logout (tambahkan method `logout` seperti di atas) |
+| GET    | `/api/contacts`      | Ya          | Daftar kontak beserta nomor telepon                |
+| POST   | `/api/contacts`      | Ya          | Menambah kontak                                    |
+| GET    | `/api/contacts/{id}` | Ya          | Detail kontak                                      |
+| DELETE | `/api/contacts/{id}` | Ya          | Menghapus kontak                                   |
 
 Contoh register:
 
@@ -303,3 +303,15 @@ Styling berada di `src/App.css` serta `src/index.css`. Error dari API ditampilka
 - **Muncul masalah CORS di browser:** pastikan API menerima origin `http://localhost:5173`. Bila konfigurasi CORS belum tersedia, publish dengan `php artisan config:publish cors`, lalu masukkan origin tersebut ke `allowed_origins` dalam `config/cors.php`.
 - **Database atau tabel belum ada:** jalankan `php artisan migrate` dari folder `kontak-api`.
 - **Token tidak berlaku:** logout, hapus `token` dari Local Storage browser, lalu login kembali.
+
+## Github
+
+https://github.com/RiskyRD/api-kontak
+
+## Screenshots
+
+![Login Page](login.png)
+
+![Register Page](register.png)
+
+![Dashboard Page](dashboard.png)
